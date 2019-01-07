@@ -30,15 +30,16 @@
       android:layout_alignParentTop="true"
       android:layout_centerHorizontal="true"
       android:padding="16dp"
-      android:textSize="14sp"
+      android:autoLink="web"
       android:textColor="#ffffff"
+      android:textSize="18sp"
       />
 
   <CheckBox
       android:background="#99000000"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="On/Off flashlight"
+      android:text="@string/on_off_flashlight"
       android:layout_alignParentBottom="true"
       android:textSize="14sp"
       android:padding="16dp"
@@ -51,7 +52,7 @@
       android:background="#99000000"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="On/Off QR decoding"
+      android:text="@string/on_off_qr_decoding"
       android:layout_above="@+id/flashlight_checkbox"
       android:textSize="14sp"
       android:padding="16dp"

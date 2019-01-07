@@ -4,5 +4,10 @@
   <string name="app_name">QR-ReaderExample</string>
   <string name="hello_world">Hello world!</string>
   <string name="menu_settings">Settings</string>
+    <string name="on_off_qr_decoding">On/Off QR decoding</string>
+    <string name="on_off_flashlight">On/Off flashlight</string>
+    <string name="erroCamera">Camera permission request was denied.</string>
+    <string name="permissionNotAvailable">Permission is not available. Requesting camera permission.</string>
+    <string name="acessRequired">Camera access is required to display the camera preview.</string>
 
 </resources>

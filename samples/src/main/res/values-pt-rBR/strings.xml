@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Leitor de Código QR</string>
+    <string name="menu_settings">Configurações</string>
+    <string name="on_off_qr_decoding">Decodificar código QR</string>
+    <string name="on_off_flashlight">Ligar laterna</string>
+    <string name="erroCamera">A permissão de acesso à câmera foi negado.</string>
+    <string name="acessRequired">O acesso à câmera é necessário para exibir a visualização da câmera.</string>
+    <string name="permissionNotAvailable">A permissão não está disponível. Solicitando permissão de câmera.</string>
+</resources>

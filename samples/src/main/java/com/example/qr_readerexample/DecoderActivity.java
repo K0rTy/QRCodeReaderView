@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
+
 import com.dlazaro66.qrcodereaderview.QRCodeReaderView;
 import com.dlazaro66.qrcodereaderview.QRCodeReaderView.OnQRCodeReadListener;
 
@@ -34,7 +35,7 @@ public class DecoderActivity extends AppCompatActivity
 
     setContentView(R.layout.activity_decoder);
 
-    mainLayout = (ViewGroup) findViewById(R.id.main_layout);
+    mainLayout = findViewById(R.id.main_layout);
 
     if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
         == PackageManager.PERMISSION_GRANTED) {
@@ -70,7 +71,7 @@ public class DecoderActivity extends AppCompatActivity
       Snackbar.make(mainLayout, "Camera permission was granted.", Snackbar.LENGTH_SHORT).show();
       initQRCodeReaderView();
     } else {
-      Snackbar.make(mainLayout, "Camera permission request was denied.", Snackbar.LENGTH_SHORT)
+      Snackbar.make(mainLayout, R.string.erroCamera, Snackbar.LENGTH_SHORT)
           .show();
     }
   }
@@ -85,7 +86,7 @@ public class DecoderActivity extends AppCompatActivity
 
   private void requestCameraPermission() {
     if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
-      Snackbar.make(mainLayout, "Camera access is required to display the camera preview.",
+      Snackbar.make(mainLayout, R.string.acessRequired,
           Snackbar.LENGTH_INDEFINITE).setAction("OK", new View.OnClickListener() {
         @Override public void onClick(View view) {
           ActivityCompat.requestPermissions(DecoderActivity.this, new String[] {
@@ -94,7 +95,7 @@ public class DecoderActivity extends AppCompatActivity
         }
       }).show();
     } else {
-      Snackbar.make(mainLayout, "Permission is not available. Requesting camera permission.",
+      Snackbar.make(mainLayout, R.string.permissionNotAvailable,
           Snackbar.LENGTH_SHORT).show();
       ActivityCompat.requestPermissions(this, new String[] {
           Manifest.permission.CAMERA
@@ -105,11 +106,11 @@ public class DecoderActivity extends AppCompatActivity
   private void initQRCodeReaderView() {
     View content = getLayoutInflater().inflate(R.layout.content_decoder, mainLayout, true);
 
-    qrCodeReaderView = (QRCodeReaderView) content.findViewById(R.id.qrdecoderview);
-    resultTextView = (TextView) content.findViewById(R.id.result_text_view);
-    flashlightCheckBox = (CheckBox) content.findViewById(R.id.flashlight_checkbox);
-    enableDecodingCheckBox = (CheckBox) content.findViewById(R.id.enable_decoding_checkbox);
-    pointsOverlayView = (PointsOverlayView) content.findViewById(R.id.points_overlay_view);
+    qrCodeReaderView = content.findViewById(R.id.qrdecoderview);
+    resultTextView = content.findViewById(R.id.result_text_view);
+    flashlightCheckBox = content.findViewById(R.id.flashlight_checkbox);
+    enableDecodingCheckBox = content.findViewById(R.id.enable_decoding_checkbox);
+    pointsOverlayView = content.findViewById(R.id.points_overlay_view);
 
     qrCodeReaderView.setAutofocusInterval(2000L);
     qrCodeReaderView.setOnQRCodeReadListener(this);
